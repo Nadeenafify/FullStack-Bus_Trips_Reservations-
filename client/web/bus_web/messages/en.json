@@ -1,0 +1,220 @@
+{
+  "Header": {
+    "brand": "GoBusNow",
+    "home": "Home",
+    "about": "About",
+    "contact": "Contact",
+    "reservations": "My Reservations",
+    "login": "Login"
+  },
+  "Hero": {
+    "title": "Book Your Bus Trip Easily",
+    "subtitle": "Safe • Fast • Comfortable travel anywhere",
+    "welcome": "Welcome"
+  },
+  "Search": {
+    
+    "from": "From",
+    "fromPlaceholder": "Departure city",
+    "to": "To",
+    "destination": "Destination city",
+    "departure": "Departure city",
+    "toPlaceholder": "Destination city",
+    "date": "Date",
+     "returnTrip": "Return trip",
+    "returnOn": "Return ON",
+    "returnOff": "Return OFF"
+  },
+  "AppPromotion": {
+    "title": "Book Faster on Our Mobile App",
+    "description": "Get exclusive discounts, manage your trips and enjoy a smoother booking experience.",
+    "googlePlay": "Google Play",
+    "appStore": "App Store"
+  },
+  "Features": {
+    "title": "Why Choose Us",
+    "subtitle": "We make your travel experience simple, fast, and reliable.",
+    "bestPrices": {
+      "title": "Best Prices Guaranteed",
+      "desc": "We offer competitive prices with no hidden costs."
+    },
+    "instantBooking": {
+      "title": "Instant Booking",
+      "desc": "Book your trip quickly and receive confirmation instantly."
+    },
+    "securePayments": {
+      "title": "Secure Payments",
+      "desc": "Your transactions are protected with top security standards."
+    },
+    "paymentMethods": {
+      "title": "Multiple Payment Methods",
+      "desc": "Pay easily using cards, wallets, or cash options."
+    }
+  },
+  "HowItWorks": {
+    "title": "How It Works",
+    "subtitle": "Book your trip in 3 simple steps",
+    "step1": {
+      "title": "Search Your Trip",
+      "desc": "Enter your route and find available buses instantly."
+    },
+    "step2": {
+      "title": "Choose Your Seat",
+      "desc": "Select your preferred seat easily."
+    },
+    "step3": {
+      "title": "Pay & Travel",
+      "desc": "Secure payment and you're ready to go!"
+    }
+  },
+  "Contact": {
+    "title": "Send Us a Message 💬",
+    "subtitle": "We usually reply within a few minutes",
+    "name": "Your Name",
+    "email": "Your Email",
+    "message": "Your Message",
+    "send": "Send Message"
+  },
+  "Footer": {
+    "description": "Book your bus trips easily, safely, and quickly online.",
+    "quickLinks": "Quick Links",
+    "home": "Home",
+    "about": "About",
+    "contact": "Contact",
+    "reservations": "My Reservations",
+    "contactTitle": "Contact",
+    "email": "Email: support@gobusnow.com",
+    "phone": "Phone: +20 100 000 0000",
+    "location": "Location: Egypt",
+    "copyright": "© 2026 GoBusNow. All rights reserved."
+  },
+  "Filters": {
+    "button": "Filters",
+    "title": "Filters",
+    "price": "Price (EGP)",
+    "min": "Min",
+    "max": "Max",
+    "departureTime": "Departure Time",
+    "morning": "Morning",
+    "afternoon": "Afternoon",
+    "evening": "Evening",
+    "amenities": "Amenities",
+    "WiFi": "WiFi",
+    "AC": "AC",
+    "Charging": "Charging",
+    "apply": "Apply Filters"
+    
+  },
+  "TripCard": {
+    "trip": "Trip",
+    "from": "From",
+    "to": "To",
+    "departure": "Departure",
+    "arrival": "Arrival",
+    "loading": "Loading amenities...",
+    "noAmenities": "No amenities found"
+  },
+  "Seats": {
+    "title": "Choose Your Seats",
+    "subtitle": "Select Your Seats",
+    "goTrip": "Go Trip",
+    "returnTrip": "Return Trip",
+    "tripCity": "Trip City",
+    "departure": "Departure",
+    "arrival": "Arrival",
+    "status": {
+      "reserved": "Reserved",
+      "available": "Available",
+      "selected": "Selected"
+    },
+    "selectedSeats": "Selected Seats",
+    "noSeats": "No seats selected",
+    "next": "Next",
+    "prev": "Prev",
+    "seat": "Seat"
+  },
+   "UserInfo": {
+    "title": "User Information",
+    "subtitle": "Fill your details to continue",
+    "fullName": "Full Name",
+    "phone": "Phone Number",
+    "email": "Email Address",
+    "namePlaceholder": "Enter your full name",
+    "phonePlaceholder": "01xxxxxxxxx",
+    "emailPlaceholder": "example@email.com",
+    "button": "Continue to payment →"
+  },
+  "CancelReservation": {
+    "title": "Reservation Cancelled",
+    "message": "Your booking has been successfully cancelled.",
+    "toastSuccess": "Reservation cancelled successfully",
+    "toastError": "Failed to cancel reservation",
+    "backHome": "Back to Home"
+  },
+   "SuccessPage": {
+    "title": "Payment Successful 🎉",
+    "message": "Your reservation has been confirmed successfully.",
+    "redirect": "Redirecting to home..."
+  },
+  "Login": {
+    "title": "Welcome Back 👋",
+    "subtitle": "Login to continue to your account",
+    "email": "Email",
+    "password": "Password",
+    "button": "Login",
+    "noAccount": "Don't have an account?",
+    "register": "Register",
+    "success": "Logged in successfully!"
+  },
+  "Register": {
+    "title": "Create Account 🚀",
+    "subtitle": "Join us and start booking your trips",
+    "email": "Email",
+    "password": "Password",
+    "button": "Register",
+    "haveAccount": "Already have an account?",
+    "login": "Login",
+    "success": "Registered successfully!"
+  },
+   "Trips": {
+    "loading": "Loading trips...",
+    "error": "Something went wrong",
+    "noTrips": "No trips found",
+    "next": "Next →"
+  },
+   "About": {
+    "title": "About Us",
+    "subtitle": "Smart and easy bus booking system",
+    "description": "We help you book bus trips easily, compare prices, and secure your seat in seconds.",
+    "features": {
+      "fast": "Fast booking experience",
+      "secure": "Secure payments",
+      "tracking": "Real-time trip tracking",
+      "support": "24/7 customer support"
+    }
+  },
+   "ContactPage": {
+    "title": "Contact Us",
+    "subtitle": "We are here to help you anytime",
+    "email": "Email",
+    "phone": "Phone",
+    "location": "Location"
+  },
+  "MyReservations": {
+    "title": "My Reservations",
+    "loading": "Loading reservations...",
+    "empty": "No reservations found."
+  },
+   "MyReservationsCard": {
+    "trip": "Trip",
+    "seats": "seat(s)",
+    "from": "From",
+    "to": "To",
+    "seatsLabel": "Seats",
+    "seat": "Seat",
+    "totalPrice": "Total Price",
+    "cancel": "Cancel",
+    "canceling": "Canceling..."
+  }
+  
+}

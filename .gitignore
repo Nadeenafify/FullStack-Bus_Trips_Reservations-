@@ -1,0 +1,5 @@
+.env
+server/.env
+node_modules
+.next
+client/web/bus_web/.env
