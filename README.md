@@ -5,8 +5,7 @@ A full-stack bus booking platform built with **Next.js, Node.js, Express, MySQL,
 ---
 
 ## 🌐 Live Demo
-
-🎥 Demo Video: ![vedio](https://drive.google.com/file/d/1ulF-Zxp07MinH5UzRtZY-H7dH-8IeKYt/view?usp=sharing)  
+🎥 Demo Video: https://drive.google.com/uc?export=download&id=1ulF-Zxp07MinH5UzRtZY-H7dH-8IeKYt
 
 ---
 
