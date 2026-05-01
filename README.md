@@ -6,7 +6,7 @@ A full-stack bus booking platform built with **Next.js, Node.js, Express, MySQL,
 
 ## 🌐 Live Demo
 
-🎥 Demo Video: ![vedio](./ScreenShots/demoVedio.mp4)  
+🎥 Demo Video: ![vedio](https://drive.google.com/file/d/1ulF-Zxp07MinH5UzRtZY-H7dH-8IeKYt/view?usp=sharing)  
 
 ---
 
@@ -31,34 +31,34 @@ A full-stack bus booking platform built with **Next.js, Node.js, Express, MySQL,
 
 
 ### 🔍 Trip Search
-![Trip 1](./screenshots/trips1.png)
+![Trip 1](./ScreenShots/trips1.png)
 
-![Trip 2](./screenshots/trips2.png)
+![Trip 2](./ScreenShots/trips2.png)
 
-![Trip 3](./screenshots/trips3.png)
+![Trip 3](./ScreenShots/trips3.png)
 
-![Trip 4](./screenshots/trips4.png)
+![Trip 4](./ScreenShots/trips4.png)
 
 ### 🎟️ Seat Selection
-![Seats 1](./screenshots/seats1.png)
+![Seats 1](./ScreenShots/seats1.png)
 
-![Seats 2](./screenshots/seats2.png)
+![Seats 2](./ScreenShots/seats2.png)
 
-![Seats 3](./screenshots/seats3.png)
+![Seats 3](./ScreenShots/seats3.png)
 
-![Seats 4](./screenshots/seats4.png)
+![Seats 4](./ScreenShots/seats4.png)
 
 ### 💳 Payment (Stripe)
-![Payment 1](./screenshots/payment.png)
+![Payment 1](./ScreenShots/payment.png)
 
 ### 👤 User Info
-![User Info](./screenshots/userinfo.png)
+![User Info](./ScreenShots/userinfo.png)
 ### 📩 Contact
-![Contact](./screenshots/contact.png)
+![Contact](./ScreenShots/contact.png)
 ### ℹ️ About
-![About](./screenshots/about.png)
+![About](./ScreenShots/about.png)
 ### 🎫 Reservations
-![Reservations](./screenshots/reservations.png)
+![Reservations](./ScreenShots/reservations.png)
 
 ---
 
