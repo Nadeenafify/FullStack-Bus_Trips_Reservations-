@@ -40,34 +40,46 @@ const useTrips = () => {
 
 
     const handleNext = () => {
+        const selectedTrips = {
+            selectedGoTrip,
+            selectedReturnTrip,
+        };
 
         sessionStorage.setItem(
-            "selectedGoTrip",
-            JSON.stringify(selectedGoTrip)
+            "selectedTrips",
+            JSON.stringify(selectedTrips)
         );
-        sessionStorage.setItem(
-            "selectedReturnTrip",
-            JSON.stringify(selectedReturnTrip)
-        );
-        if (canProceed)
+
+        if (canProceed && selectedGoTrip && selectedReturnTrip&&!isReturn) {
             router.push(`/${locale}/seats`);
-        else if (!canProceed && selectedGoTrip) {
+            return;
+        }
+
+        if ((selectedGoTrip && !selectedReturnTrip&&!canProceed)||(selectedGoTrip && selectedReturnTrip&&isReturn)) {
             const params = new URLSearchParams({
                 fromCity: String(toCity),
                 toCity: String(fromCity),
                 date: date,
             });
+
             router.push(`/${locale}/trips?${params.toString()}`);
         }
-
-
     };
 
     useEffect(() => {
         if (fromCity && toCity && date) {
             fetchTrips();
         }
-    }, [fromCity, toCity, date, JSON.stringify(filters)]);
+
+        const saved = sessionStorage.getItem("selectedTrips");
+
+        if (saved) {
+            const parsed = JSON.parse(saved);
+
+            setSelectedGoTrip(parsed.selectedGoTrip || null);
+            setSelectedReturnTrip(parsed.selectedReturnTrip || null);
+        }
+    }, [fromCity, toCity, date,JSON.stringify(filters)]);
 
     return {
         trips,

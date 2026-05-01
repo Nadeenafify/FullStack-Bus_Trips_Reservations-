@@ -38,3 +38,4 @@ const seedTripAmenities = async () => {
 };
 
 seedTripAmenities();
+// Nadeen@Supabase#Secure88

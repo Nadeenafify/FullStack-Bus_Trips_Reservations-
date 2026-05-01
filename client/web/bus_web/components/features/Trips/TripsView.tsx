@@ -66,9 +66,9 @@ const TripsView = () => {
                 setSelectedReturnTrip={setSelectedReturnTrip}
               />
             ))
-          ) : (
-            <p>{t("noTrips")}</p>
-          )}
+          ) :
+           !loading&& <p>{t("noTrips")}</p>
+          }
         </div>
       </div>
 

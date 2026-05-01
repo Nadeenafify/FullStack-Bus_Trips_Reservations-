@@ -1,3 +1,4 @@
+
 import axios from "axios";
 
 // 🔹 Main API client
@@ -22,6 +23,7 @@ apiClient.interceptors.request.use((config) => {
 
     // 👇 opt-in flag: useAuth
     const useAuth = config.headers?.useAuth !== false;
+    config.headers.useAuth = useAuth;
 
     if (token && useAuth) {
       config.headers.Authorization = `Bearer ${token}`;
@@ -41,15 +43,21 @@ apiClient.interceptors.response.use(
   (response) => response,
   async (error) => {
     const originalRequest = error.config;
+  const useAuth = originalRequest?.headers?.useAuth !== false;
 
     if (
       error.response?.status === 401 &&
       originalRequest &&
-      !originalRequest._retry
+      !originalRequest._retry&&
+      useAuth
+     
+  
     ) {
       originalRequest._retry = true;
+            console.log("auth",originalRequest.useAuth)
 
       try {
+       
         const res = await refreshClient.post("/auth/refresh");
 
         const newAccessToken = res.data.accessToken;
@@ -68,10 +76,10 @@ apiClient.interceptors.response.use(
         // refresh failed → logout
         localStorage.removeItem("accessToken");
   
-        if (typeof window !== "undefined") {
-          window.location.href = "/login";
-        }
-
+        // if (typeof window !== "undefined") {
+        //   window.location.href = "/login";
+        // }
+         console.log("auth",originalRequest.useAuth)
         return Promise.reject(err);
       }
     }

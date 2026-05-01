@@ -7,8 +7,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
     <div className="min-h-screen flex flex-col">
     
       <HeaderSection />
-
-      <main className="flex-1">{children}</main>
+       <main className="flex-1">{children}</main>
       <FooterSection />
     </div>
   );

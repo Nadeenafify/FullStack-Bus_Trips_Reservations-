@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FaFilter } from "react-icons/fa";
 import { useTranslations } from "next-intl";
 
@@ -20,13 +20,26 @@ const FiltersCard = ({ onApply }: Props) => {
   });
 
   const handleApply = () => {
+    sessionStorage.setItem(
+      "tripFilters",
+      JSON.stringify(localFilters)
+    );
+
     onApply(localFilters);
     setOpen(false);
   };
+  useEffect(() => {
+    const saved = sessionStorage.getItem("tripFilters");
+
+    if (saved) {
+      const parsed = JSON.parse(saved);
+      setLocalFilters(parsed);
+    }
+  }, []);
 
   return (
     <>
-     
+
       <div className="sm:hidden py-3 ">
         <button
           onClick={() => setOpen(true)}
@@ -37,18 +50,18 @@ const FiltersCard = ({ onApply }: Props) => {
         </button>
       </div>
 
-      
+
       {open && (
         <div
-          className="fixed inset-0 bg-black/40 z-40"
+          className="fixed inset-0 bg-black/40 z-20"
           onClick={() => setOpen(false)}
         />
       )}
 
-     
+
       <div
         className={`
-          fixed sm:static top-0 left-0 h-full sm:h-fit z-50
+          fixed sm:static top-0 left-0 h-full sm:h-fit z-20
           w-[80%] sm:w-[30%] lg:w-[25%]
           bg-white p-4 shadow-md border border-gray-300 rounded-xl
           transition-transform duration-300
@@ -94,7 +107,7 @@ const FiltersCard = ({ onApply }: Props) => {
           </div>
         </div>
 
-       
+
         <div className="mb-4">
           <p className="font-medium mb-2">{t("departureTime")}</p>
           <div className="flex flex-col gap-1 text-sm">
@@ -116,7 +129,7 @@ const FiltersCard = ({ onApply }: Props) => {
           </div>
         </div>
 
-       
+
         <div>
           <p className="font-medium mb-2">{t("amenities")}</p>
           <div className="flex flex-col gap-1 text-sm">
@@ -140,7 +153,7 @@ const FiltersCard = ({ onApply }: Props) => {
           </div>
         </div>
 
-       
+
         <div className="mt-6">
           <button
             onClick={handleApply}

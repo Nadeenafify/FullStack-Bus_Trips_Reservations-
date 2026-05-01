@@ -13,7 +13,6 @@
     "welcome": "Welcome"
   },
   "Search": {
-    
     "from": "From",
     "fromPlaceholder": "Departure city",
     "to": "To",
@@ -21,7 +20,7 @@
     "departure": "Departure city",
     "toPlaceholder": "Destination city",
     "date": "Date",
-     "returnTrip": "Return trip",
+    "returnTrip": "Return trip",
     "returnOn": "Return ON",
     "returnOff": "Return OFF"
   },
@@ -103,7 +102,6 @@
     "AC": "AC",
     "Charging": "Charging",
     "apply": "Apply Filters"
-    
   },
   "TripCard": {
     "trip": "Trip",
@@ -133,7 +131,7 @@
     "prev": "Prev",
     "seat": "Seat"
   },
-   "UserInfo": {
+  "UserInfo": {
     "title": "User Information",
     "subtitle": "Fill your details to continue",
     "fullName": "Full Name",
@@ -151,12 +149,14 @@
     "toastError": "Failed to cancel reservation",
     "backHome": "Back to Home"
   },
-   "SuccessPage": {
+  "SuccessPage": {
     "title": "Payment Successful 🎉",
     "message": "Your reservation has been confirmed successfully.",
     "redirect": "Redirecting to home..."
   },
   "Login": {
+    "loginSuccess": "Login successful",
+    "loginError": "Login failed. Please make sure your email and password are correct",
     "title": "Welcome Back 👋",
     "subtitle": "Login to continue to your account",
     "email": "Email",
@@ -167,6 +167,8 @@
     "success": "Logged in successfully!"
   },
   "Register": {
+    "registerSuccess": "Account created successfully",
+    "registerError": "Registration failed. Please check your data and try again",
     "title": "Create Account 🚀",
     "subtitle": "Join us and start booking your trips",
     "email": "Email",
@@ -176,13 +178,13 @@
     "login": "Login",
     "success": "Registered successfully!"
   },
-   "Trips": {
+  "Trips": {
     "loading": "Loading trips...",
     "error": "Something went wrong",
     "noTrips": "No trips found",
     "next": "Next →"
   },
-   "About": {
+  "About": {
     "title": "About Us",
     "subtitle": "Smart and easy bus booking system",
     "description": "We help you book bus trips easily, compare prices, and secure your seat in seconds.",
@@ -193,7 +195,7 @@
       "support": "24/7 customer support"
     }
   },
-   "ContactPage": {
+  "ContactPage": {
     "title": "Contact Us",
     "subtitle": "We are here to help you anytime",
     "email": "Email",
@@ -205,7 +207,7 @@
     "loading": "Loading reservations...",
     "empty": "No reservations found."
   },
-   "MyReservationsCard": {
+  "MyReservationsCard": {
     "trip": "Trip",
     "seats": "seat(s)",
     "from": "From",
@@ -216,5 +218,4 @@
     "cancel": "Cancel",
     "canceling": "Canceling..."
   }
-  
 }

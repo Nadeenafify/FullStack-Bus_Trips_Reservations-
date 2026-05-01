@@ -1,7 +1,7 @@
 import "./globals.css";
 import { NextIntlClientProvider } from "next-intl";
 import { notFound } from "next/navigation";
-
+import ClearSession from "@/components/ClearSession";
 import { Toaster } from "react-hot-toast";
 
 
@@ -30,12 +30,13 @@ export default async function LocaleLayout({
   } catch {
     notFound();
   }
+  
 
   return (
     <html lang={locale} dir={locale === "ar" ? "rtl" : "ltr"}>
       <body>
         <NextIntlClientProvider locale={locale} messages={messages}>
-         
+          <ClearSession/>
           {children}
           <Toaster position="top-right" />
          

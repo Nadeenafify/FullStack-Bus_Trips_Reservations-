@@ -1,43 +1,33 @@
 "use client";
-
-import { login } from "@/services/authServices";
-import { useState } from "react";
 import Link from "next/link";
-import { useLocale, useTranslations } from "next-intl";
-import { useRouter } from "next/navigation";
+import useLogin from "@/hooks/login/useLogin";
+import { Home } from "lucide-react";
 
 export default function LoginView() {
-  const locale = useLocale();
-  const router = useRouter();
-  const t = useTranslations("Login");
 
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const {
+    setEmail,
+    setPassword,
+    handleLogin,
+    t,
+    locale,
+    email,
+    password
+  } = useLogin()
 
-  const handleLogin = async () => {
-    try {
-      const data = await login({ email, password });
 
-      if (data?.accessToken) {
-        localStorage.setItem("accessToken", data.accessToken);
-        localStorage.setItem("userId", data.userId);
-      }
-
-      console.log(t("success"), data);
-
-      router.push(`/${locale}`);
-    } catch (err: any) {
-
-      console.log(err.message);
-    }
-  };
 
   return (
     <div className="min-h-[80vh] mt-30 flex items-center justify-center px-4">
-
       <div className="w-full max-w-md flex flex-col gap-6">
-
-
+        <div className="flex justify-start">
+          <Link
+            href={`/${locale}`}
+            className="text-gray-600 hover:text-pink-500 transition"
+          >
+            <Home size={24} />
+          </Link>
+        </div>
         <div className="text-center">
           <h1 className="text-3xl font-bold text-gray-800">
             {t("title")}
@@ -52,6 +42,7 @@ export default function LoginView() {
           className="border p-2 rounded w-full focus:outline-none focus:ring-2 focus:ring-pink-400"
           placeholder={t("email")}
           type="email"
+          value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
 
@@ -60,12 +51,17 @@ export default function LoginView() {
           className="border p-2 rounded w-full focus:outline-none focus:ring-2 focus:ring-pink-400"
           placeholder={t("password")}
           type="password"
+          value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
 
 
         <button
-          onClick={handleLogin}
+          type="button"
+          onClick={(e) => {
+            e.preventDefault()
+            handleLogin()
+          }}
           className="bg-pink-500 text-white px-4 py-2 rounded hover:bg-pink-600 transition w-full"
         >
           {t("button")}

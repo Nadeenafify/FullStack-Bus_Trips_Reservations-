@@ -1,10 +1,9 @@
 "use client"
 import { getAmenities } from "@/services/tripsServices";
 import { Trip } from "@/types/trips";
-import { useSearchParams } from "next/navigation";
 import { useState } from "react";
 
-const useTrip = ({ 
+const useTrip = ({
     trip,
     selectedGoTrip,
     setSelectedGoTrip,
@@ -12,9 +11,9 @@ const useTrip = ({
     setSelectedReturnTrip,
 }: {
     trip: Trip,
-    selectedGoTrip: number|null
+    selectedGoTrip: number | null
     setSelectedGoTrip: any
-    selectedReturnTrip: number|null
+    selectedReturnTrip: number | null
     setSelectedReturnTrip: any
 
 
@@ -23,7 +22,6 @@ const useTrip = ({
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(false);
     const [open, setOpen] = useState(false);
-    const params=useSearchParams()
 
 
     const fetchAmenities = async (id: number | string) => {
@@ -62,10 +60,36 @@ const useTrip = ({
     };
 
     function handelAdd() {
-        if (!selectedGoTrip) 
-            setSelectedGoTrip(trip.tripId)
-        else if (!selectedReturnTrip && selectedGoTrip&&params.get("return")&&trip.tripId!==selectedGoTrip) 
-            setSelectedReturnTrip(trip.tripId)
+        if (!selectedGoTrip) {
+            const goTrip = trip.tripId;
+            setSelectedGoTrip(goTrip);
+
+            sessionStorage.setItem(
+                "selectedTrips",
+                JSON.stringify({
+                    selectedGoTrip: goTrip,
+                    selectedReturnTrip: selectedReturnTrip,
+                })
+            );
+
+            return;
+        }
+
+        if (
+            !selectedReturnTrip &&
+            trip.tripId !== selectedGoTrip
+        ) {
+            const returnTrip = trip.tripId;
+            setSelectedReturnTrip(returnTrip);
+
+            sessionStorage.setItem(
+                "selectedTrips",
+                JSON.stringify({
+                    selectedGoTrip,
+                    selectedReturnTrip: returnTrip,
+                })
+            );
+        }
     }
 
     return {

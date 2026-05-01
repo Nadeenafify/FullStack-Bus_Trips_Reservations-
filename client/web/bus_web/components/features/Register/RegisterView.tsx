@@ -1,43 +1,32 @@
 "use client";
-
-import { register } from "@/services/authServices";
-import { useState } from "react";
 import Link from "next/link";
-import { useLocale, useTranslations } from "next-intl";
-import { useRouter } from "next/navigation";
+import { Home } from "lucide-react";
+import useRegister from "@/hooks/register/useRegister";
 
 export default function RegisterView() {
-  const locale = useLocale();
-  const router = useRouter();
-  const t = useTranslations("Register");
-
-
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-
-  const handleRegister = async () => {
-    try {
-
-      const data = await register({ email, password });
-
-      if (data?.accessToken) {
-        localStorage.setItem("accessToken", data.accessToken);
-        localStorage.setItem("userId", data.userId);
-      }
-
-      console.log(t("success"), data);
-
-      router.push(`/${locale}`);
-    } catch (err: any) {
-      console.log(err.message);
-    }
-  };
+  const {
+    email,
+    setEmail,
+    password,
+    setPassword,
+    handleRegister,
+    t,
+    locale
+  } = useRegister()
 
   return (
     <div className="min-h-[80vh] mt-30 flex items-center justify-center px-4">
 
-      <div className="w-full max-w-md flex flex-col gap-6">
+      <div className="w-full max-w-md  flex flex-col gap-6">
 
+        <div className="flex justify-start">
+          <Link
+            href={`/${locale}`}
+            className="text-gray-600 hover:text-pink-500 transition"
+          >
+            <Home size={24} />
+          </Link>
+        </div>
 
         <div className="text-center">
           <h1 className="text-3xl font-bold text-gray-800">
@@ -47,21 +36,22 @@ export default function RegisterView() {
             {t("subtitle")}
           </p>
         </div>
+
         <input
+          value={email}
           className="border p-2 rounded w-full focus:outline-none focus:ring-2 focus:ring-pink-400"
           placeholder={t("email")}
           type="email"
           onChange={(e) => setEmail(e.target.value)}
         />
 
-
         <input
+          value={password}
           className="border p-2 rounded w-full focus:outline-none focus:ring-2 focus:ring-pink-400"
           placeholder={t("password")}
           type="password"
           onChange={(e) => setPassword(e.target.value)}
         />
-
 
         <button
           onClick={handleRegister}
@@ -69,7 +59,6 @@ export default function RegisterView() {
         >
           {t("button")}
         </button>
-
 
         <p className="text-center text-sm text-gray-600">
           {t("haveAccount")}{" "}
