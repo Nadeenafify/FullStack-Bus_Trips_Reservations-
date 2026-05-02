@@ -18,26 +18,26 @@ module.exports = (db) => {
         }
     })
 
-    router.put("/reserve/:seatId", async (req, res) => {
-    try {
-        const { seatId } = req.params;
+//     router.put("/reserve/:seatId", async (req, res) => {
+//     try {
+//         const { seatId } = req.params;
 
-        const [result] = await db.query(
-            "UPDATE seats SET isReserved = 1 WHERE seatId = ? AND isReserved = 0",
-            [seatId]
-        );
+//         const [result] = await db.query(
+//             "UPDATE seats SET isReserved = 1 WHERE seatId = ? AND isReserved = 0",
+//             [seatId]
+//         );
 
-        if (result.affectedRows === 0) {
-            return res.status(400).json({
-                message: "Seat already reserved or not found"
-            });
-        }
+//         if (result.affectedRows === 0) {
+//             return res.status(400).json({
+//                 message: "Seat already reserved or not found"
+//             });
+//         }
 
-        res.status(200).json({ message: "Seat reserved successfully" });
-    } catch (err) {
-        res.status(500).json({ message: err.message });
-    }
-});
+//         res.status(200).json({ message: "Seat reserved successfully" });
+//     } catch (err) {
+//         res.status(500).json({ message: err.message });
+//     }
+// });
 
     return router
 }

@@ -7,7 +7,7 @@ const app = express()
 
 app.use(express.json())
 
-console.log("JWT_SECRET:", process.env.JWT_SECRET);
+// console.log("JWT_SECRET:", process.env.JWT_SECRET);
 
 let db
 

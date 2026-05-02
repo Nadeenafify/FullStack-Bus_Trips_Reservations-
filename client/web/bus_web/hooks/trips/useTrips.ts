@@ -50,12 +50,12 @@ const useTrips = () => {
             JSON.stringify(selectedTrips)
         );
 
-        if (canProceed && selectedGoTrip && selectedReturnTrip&&!isReturn) {
+        if (canProceed &&!isReturn) {
             router.push(`/${locale}/seats`);
             return;
         }
 
-        if ((selectedGoTrip && !selectedReturnTrip&&!canProceed)||(selectedGoTrip && selectedReturnTrip&&isReturn)) {
+      else{
             const params = new URLSearchParams({
                 fromCity: String(toCity),
                 toCity: String(fromCity),
